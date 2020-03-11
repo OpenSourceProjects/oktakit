@@ -9,6 +9,7 @@ require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
 require 'oktakit/client/templates'
 require 'oktakit/client/users'
+require 'oktakit/client/identity'
 
 module Oktakit
   class Client
@@ -23,6 +24,9 @@ module Oktakit
     include Templates
     include Users
 
+    # Identity
+    include Identity
+
     RESOURCE_BASE_URL = '/api/v1/'
 
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
@@ -34,7 +38,7 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token:, organization: nil, api_endpoint: nil)
+    def initialize(token:, organization: nil, api_endpoint: nil, auth_server_id: 'default')
       if organization.nil? && api_endpoint.nil?
         raise ArgumentError, "Please provide either the organization or the api_endpoint argument"
       end
@@ -42,6 +46,7 @@ module Oktakit
       @token = token
       @organization = organization
       @api_endpoint = api_endpoint
+      @auth_server_id = auth_server_id
     end
 
     def api_endpoint

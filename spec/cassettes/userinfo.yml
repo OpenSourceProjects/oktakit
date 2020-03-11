@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/oauth2/default/v1/userinfo
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.2.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Wed, 11 Mar 2020 16:52:40 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="r5EfzZxQVvQpKo3AgYRaT7X2bDO/kj3ACwmxfdT2zt8="; pin-sha256="MaqlcUgk2mvY/RFSGeSwBRkI+rZ6/dxe/DuQfBT/vnQ=";
+        pin-sha256="72G5IEvDEWn+EThf3qjR7/bQSWaS2ZSLqolhnO6iyJI="; pin-sha256="rrV6CLCCvqnk89gWibYT0JO6fNQ8cCit7GGoiVTjCOg=";
+        max-age=60; report-uri="https://okta.report-uri.io/r/default/hpkp/reportOnly"
+      x-okta-request-id:
+      - XmkXWMiSQvZguWBVtUmdGQAAB00
+      x-xss-protection:
+      - 1; mode=block; report=https://okta.report-uri.com/r/d/xss/enforce
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '600'
+      x-rate-limit-remaining:
+      - '599'
+      x-rate-limit-reset:
+      - '1583945620'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000
+      x-robots-tag:
+      - none
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=8079DB15CEE6DA388146DF7B626F257B;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"sub":"00u1hqsbowzkFXEbP0h8","name":"Max Man","locale":"en-US","email":"maxman@example.com","preferred_username":"maxman@example.com","given_name":"Max","family_name":"Man","zoneinfo":"America/Los_Angeles","updated_at":1573677273,"email_verified":true,"groups":["Group Example"]}'
+    http_version:
+  recorded_at: Wed, 11 Mar 2020 16:52:40 GMT
+recorded_with: VCR 2.9.3
