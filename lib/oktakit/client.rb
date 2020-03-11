@@ -12,6 +12,7 @@ require 'oktakit/client/users'
 
 module Oktakit
   class Client
+    # Resources
     include AdminRoles
     include Apps
     include Events
