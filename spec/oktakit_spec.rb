@@ -8,7 +8,7 @@ describe Oktakit do
   describe 'client' do
     it 'has a default API endpoint' do
       client = Oktakit::Client.new(token: test_okta_token, organization: 'okta-test')
-      expect(client.api_endpoint).to eq('https://okta-test.okta.com/api/v1')
+      expect(client.api_endpoint).to eq('https://okta-test.okta.com/')
     end
 
     it 'allows to configure the API endpoint' do

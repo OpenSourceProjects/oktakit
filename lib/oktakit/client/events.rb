@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.list_events
       def list_events(options = {})
-        get('events', options)
+        get(RESOURCE_BASE_URL + 'events', options)
       end
     end
   end

@@ -22,6 +22,8 @@ module Oktakit
     include Templates
     include Users
 
+    RESOURCE_BASE_URL = '/api/v1/'
+
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
     RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
 
@@ -42,7 +44,7 @@ module Oktakit
     end
 
     def api_endpoint
-      @api_endpoint || "https://#{@organization.downcase}.okta.com/api/v1"
+      @api_endpoint || "https://#{@organization.downcase}.okta.com/"
     end
 
     # Make a HTTP GET request
